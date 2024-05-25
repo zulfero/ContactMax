@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import
+import Homepage from "../pages/HomePage";
 
 function Router(){
     <BrowserRouter>
@@ -8,7 +8,7 @@ function Router(){
           path="/"
           element={
             <Layout>
-              <Home />
+              <Homepage />
             </Layout>
           }
         />
@@ -16,3 +16,4 @@ function Router(){
     
     </BrowserRouter>
 }
+export default Router
