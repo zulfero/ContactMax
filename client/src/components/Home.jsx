@@ -1,10 +1,8 @@
 function Home() {
   return (
-    <>
-      <div>
-        <p>this is the home page</p>
-      </div>
-    </>
+    <div className="container mx-auto">
+      <div></div>
+    </div>
   );
 }
 export default Home;
