@@ -12,7 +12,7 @@ function Footer() {
             </div>
           </div>
           <div className="text-center mt-9">
-            <p>Follow Us At</p>
+            <p className="font-bold text-xl text-white">Follow Us At</p>
             <div className="flex gap-6 mt-5">
               <img src="src/images/facebook.png" alt="" width={50} />
               <img src="src/images/twitter.png" alt="" width={50} />
