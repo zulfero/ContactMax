@@ -11,7 +11,7 @@ function Subscribe() {
           For a Better Experience In Managing Your Contacts
         </h2>
 
-        <div className="flex container mx-auto gap-[15em] mt-12">
+        <div className="flex container mx-auto gap-[13em] mt-12">
           <div className="rounded-md w-[35%]">
             <Propsubscribe
               heading1="Free"
