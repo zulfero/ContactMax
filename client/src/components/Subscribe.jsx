@@ -11,34 +11,37 @@ function Subscribe() {
           For a Better Experience In Managing Your Contacts
         </h2>
 
-        <div className="flex container mx-auto gap-[15em] text-center mt-12">
-          <div className="border rounded-md w-[35%]">
+        <div className="flex container mx-auto gap-[15em] mt-12">
+          <div className="rounded-md w-[35%]">
             <Propsubscribe
               heading1="Free"
               heading2="$0"
-              paragraph1=".Store Upto 50 Contacts"
-              paragraph2=".Basic Contacts Field"
-              paragraph3=".Basic Search Functionalities"
+              note="per month"
+              paragraph1="Store Upto 50 Contacts"
+              paragraph2="Basic Contacts Field"
+              paragraph3="Basic Search Functionalities"
               paragraph4="Limited Bulk Emailing"
             />
           </div>
-          <div className="border rounded-md w-[35%]">
+          <div className=" pb-8 rounded-md w-[35%]">
             <Propsubscribe
               heading1="Premium"
               heading2="$149"
-              paragraph1=".Store Upto 50 Contacts"
-              paragraph2=".Basic Contacts Field"
-              paragraph3=".Basic Search Functionalities"
+              note="per month"
+              paragraph1="Store Upto 50 Contacts"
+              paragraph2="Basic Contacts Field"
+              paragraph3="Basic Search Functionalities"
               paragraph4="Limited Bulk Emailing"
             />
           </div>
-          <div className="border rounded-md w-[35%]">
+          <div className=" rounded-md w-[35%]">
             <Propsubscribe
               heading1="Unlimited"
               heading2="$249"
-              paragraph1=".Store Upto 50 Contacts"
-              paragraph2=".Basic Contacts Field"
-              paragraph3=".Basic Search Functionalities"
+              note="per month"
+              paragraph1="Store Upto 50 Contacts"
+              paragraph2="Basic Contacts Field"
+              paragraph3="Basic Search Functionalities"
               paragraph4="Limited Bulk Emailing"
             />
           </div>

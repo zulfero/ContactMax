@@ -6,19 +6,19 @@ function Cards() {
       <div className="mb-[10em]">
         <h1 className="font-bold text-4xl text-center mb-[3em]">Features</h1>
         <div className="flex justify-between text-center">
-          <div className=" w-[25%] rounded-2xl h-[20vh]">
+          <div className=" bg-[#4870FC] w-[25%] rounded-2xl">
             <Cardsprop
               heading="Phase 1."
               paragraph=" Users can input details such as names, phone numbers, email addresses, and additional notes, ensuring easy access to important contacts when needed."
             />
           </div>
-          <div className=" w-[25%] rounded-2xl h-[20vh] ">
+          <div className=" w-[25%] rounded-2xl bg-[#4870FC] ">
             <Cardsprop
               heading="Phase 1."
               paragraph=" Users can input details such as names, phone numbers, email addresses, and additional notes, ensuring easy access to important contacts when needed."
             />
           </div>
-          <div className=" w-[25%] rounded-2xl h-[20vh]">
+          <div className=" w-[25%] rounded-2xl bg-[#4870FC]">
             <Cardsprop
               heading="Phase 1."
               paragraph=" Users can input details such as names, phone numbers, email addresses, and additional notes, ensuring easy access to important contacts when needed."
