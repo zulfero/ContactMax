@@ -3,7 +3,7 @@ import Signupcontent from "../components/Signupcontent";
 function signup() {
   return (
     <>
-      <Signupcontent />
+      {/* <Signupcontent /> */}
     </>
   );
 }

@@ -37,7 +37,9 @@ function Propsubscribe({
         </div>
       </div>
       <div className="text-center mt-6">
-        <button className="border px-24 p-4 rounded-md">Try For Free</button>
+        <button className="border rounded-md bg-[#4870FC] text-white w-[100%] py-4">
+          Try For Free
+        </button>
       </div>
     </div>
   );

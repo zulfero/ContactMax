@@ -3,9 +3,8 @@ import Layout from "../pages/Layout";
 import Homepage from "../pages/HomePage";
 import Dashboard from "./Dashboard";
 import Signupcontent from "./Signupcontent";
-import Logincontent from "./Logincontent";
 
-function Router() {
+function Router({ isopen, setIsopen }) {
   return (
     <BrowserRouter>
       <Routes>
@@ -13,7 +12,7 @@ function Router() {
           path="/"
           element={
             <Layout>
-              <Homepage />
+              <Homepage isopen={isopen} setIsopen={setIsopen} />
             </Layout>
           }
         />
@@ -34,10 +33,10 @@ function Router() {
           }
         />
         <Route
-          path="/logincontent"
+          path="/dashboard"
           element={
             <Layout>
-              <Logincontent />
+              <Dashboard />
             </Layout>
           }
         />
