@@ -28,7 +28,7 @@ function Herosect() {
           </div>
         </div>
 
-        <img className="" src="src/images/new.svg" alt="" />
+        <img className="" src="src/assets/images/new.svg" alt="" />
       </div>
       {/* {isopen ? <Signupcontent setIsopen={setIsopen} isopen={isopen} /> : null} */}
     </>

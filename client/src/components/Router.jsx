@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "../pages/Layout";
 import Homepage from "../pages/HomePage";
-import Dashboard from "./Dashboard";
 import Signupcontent from "./Signupcontent";
+import Dashboard from "../pages/Dashboard";
+import Contacts from "../pages/Contacts";
+import Categories from "../pages/Categories";
 
 function Router({ isopen, setIsopen }) {
   return (
@@ -16,11 +18,19 @@ function Router({ isopen, setIsopen }) {
             </Layout>
           }
         />
-        <Route
-          path="*"
+        {/* <Route
+          path="/dashboard"
           element={
             <Layout>
               <Dashboard />
+            </Layout>
+          } */}
+        {/* /> */}
+          <Route
+          path="/dashboard/contacts"
+          element={
+            <Layout>
+              <Contacts />
             </Layout>
           }
         />
@@ -37,6 +47,14 @@ function Router({ isopen, setIsopen }) {
           element={
             <Layout>
               <Dashboard />
+            </Layout>
+          }
+        />
+           <Route
+          path="/dashboard/categories"
+          element={
+            <Layout>
+              <Categories />
             </Layout>
           }
         />

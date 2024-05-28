@@ -8,7 +8,7 @@ function Testimonials() {
       </div>
       <div className=" flex justify-around">
         <TestimonialProp
-          image="src/images/female.jpg"
+          image="src/assets/images/female.jpg"
           name="Natasha Romanof"
           paragraph="“ I have found using the contact-
         max useful due to its fast pace
@@ -16,7 +16,7 @@ function Testimonials() {
         that is important”"
         />
         <TestimonialProp
-          image="src/images/images (1).jpeg"
+          image="src/assets/images/images (1).jpeg"
           name="Kalvin clain"
           paragraph="“ I have found using the contact-
         max useful due to its fast pace
@@ -24,7 +24,7 @@ function Testimonials() {
         that is important”"
         />
         <TestimonialProp
-          image="src/images/avater.jpg"
+          image="src/assets/images/avater.jpg"
           name="Jhon Cena"
           paragraph="“ I have found using the contact-
         max useful due to its fast pace
