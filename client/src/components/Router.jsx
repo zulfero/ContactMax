@@ -5,6 +5,7 @@ import Signupcontent from "./Signupcontent";
 import Dashboard from "../pages/Dashboard";
 import Contacts from "../pages/Contacts";
 import Categories from "../pages/Categories";
+import AddCategory from "./AddCategory";
 
 function Router({ isopen, setIsopen }) {
   return (
@@ -26,7 +27,7 @@ function Router({ isopen, setIsopen }) {
             </Layout>
           } */}
         {/* /> */}
-          <Route
+        <Route
           path="/dashboard/contacts"
           element={
             <Layout>
@@ -50,11 +51,19 @@ function Router({ isopen, setIsopen }) {
             </Layout>
           }
         />
-           <Route
+        <Route
           path="/dashboard/categories"
           element={
             <Layout>
               <Categories />
+            </Layout>
+          }
+        />
+        <Route
+          path="addcat"
+          element={
+            <Layout>
+              <AddCategory />
             </Layout>
           }
         />
