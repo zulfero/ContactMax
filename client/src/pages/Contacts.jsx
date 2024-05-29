@@ -1,4 +1,5 @@
 import Dashboard from "./Dashboard";
+import { Link } from "react-router-dom";
 
 function Contacts() {
   return (
@@ -30,13 +31,16 @@ function Contacts() {
           <h1>Address</h1>
           <h1>Birth Date</h1>
         </div>
-        <div className="flex justify-around items-center mt-[2em] border-b-black ">
-          <p>Marvin Omondi</p>
-          <p>Marviniie@gmail.com</p>
-          <p>(00741)0743921270</p>
-          <p>Magnolia horegion 1234</p>
-          <p>1994/02/3</p>
-        </div>
+        <Link to="/dashboard/singlecontact">
+          {" "}
+          <div className="flex justify-around items-center mt-[2em] border-b-black ">
+            <p>Marvin Omondi</p>
+            <p>Marviniie@gmail.com</p>
+            <p>(00741)0743921270</p>
+            <p>Magnolia horegion 1234</p>
+            <p>1994/02/3</p>
+          </div>{" "}
+        </Link>
         <div className="flex justify-around items-center mt-[2em] border-b-black ">
           <p>Marvin Omondi</p>
           <p>Marviniie@gmail.com</p>

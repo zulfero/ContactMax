@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 function AddCategory() {
   const navigate = useNavigate();
   function handleAddcategory(e) {
-    setIsopen((prev) => ({ ...prev, AddCategory: false }));
+    setIsopen(false);
   }
   return (
     <>
@@ -12,7 +12,7 @@ function AddCategory() {
           <div>
             <span
               onClick={(e) => handleAddcategory()}
-              className=" border border-none absolute flex items-center justify-center right-[24em] top-[3.4em] cursor-pointer size-8 rounded-full text-2xl p-2 bg-[#4870FC] text-white"
+              className=" border border-none absolute flex items-center justify-center right-[25em] top-[3.4em] cursor-pointer size-8 rounded-full text-2xl p-2 bg-[#4870FC] text-white"
             >
               x
             </span>
@@ -23,7 +23,7 @@ function AddCategory() {
             </h1>
             <form className="  flex flex-col gap-4 px-[3em]">
               <input
-                className="px-2 py-5"
+                className="px-2 py-5 outline-none"
                 type="text"
                 placeholder="Category Name..."
               />
