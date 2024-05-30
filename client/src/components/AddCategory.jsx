@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 function AddCategory() {
-  const navigate = useNavigate();
+  const navigate = useNavigate({ isopen: false, setIsopen: false });
   function handleAddcategory(e) {
     setIsopen(false);
   }
@@ -11,7 +11,9 @@ function AddCategory() {
         <div className=" fixed w-[100%] bg-[rgba(0,0,0,0.7)] h-screen top-0 left-0">
           <div>
             <span
-              onClick={(e) => handleAddcategory()}
+              onClick={() =>
+                setIsopen((prev) => ({ ...prev, addcategory: true }))
+              }
               className=" border border-none absolute flex items-center justify-center right-[25em] top-[3.4em] cursor-pointer size-8 rounded-full text-2xl p-2 bg-[#4870FC] text-white"
             >
               x
@@ -31,7 +33,7 @@ function AddCategory() {
               <div className="text-center flex flex-col gap-8 mb-[7em] mt-[3em] items-center">
                 <button
                   className="font-semibold border rounded-md w-[30%] py-4 text-xl bg-[#4870FC] cursor-pointer text-white"
-                  onClick={() => navigate("/dashboard/contacts")}
+                  onClick={() => navigate("/dashboard/categories")}
                 >
                   Add
                 </button>
