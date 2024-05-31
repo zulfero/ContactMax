@@ -19,5 +19,5 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('contactMax',include('contactMaxapp.urls'))
+    # path('contactMax',include('contactMaxapp.urls'))
 ]

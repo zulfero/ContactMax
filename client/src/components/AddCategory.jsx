@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-function AddCategory() {
+function AddCategory({setIsopen,isopen}) {
   const navigate = useNavigate({ isopen: false, setIsopen: false });
   function handleAddcategory(e) {
     setIsopen(false);
@@ -12,7 +12,7 @@ function AddCategory() {
           <div>
             <span
               onClick={() =>
-                setIsopen((prev) => ({ ...prev, addcategory: true }))
+                setIsopen((prev) => ({ ...prev, addcategory: false }))
               }
               className=" border border-none absolute flex items-center justify-center right-[25em] top-[3.4em] cursor-pointer size-8 rounded-full text-2xl p-2 bg-[#4870FC] text-white"
             >

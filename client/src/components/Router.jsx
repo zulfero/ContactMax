@@ -7,6 +7,7 @@ import Contacts from "../pages/Contacts";
 import Categories from "../pages/Categories";
 import AddCategory from "./AddCategory";
 import SingleContact from "../pages/SingleContact";
+import Mail from "../pages/Mail";
 
 function Router({ isopen, setIsopen }) {
   return (
@@ -65,6 +66,14 @@ function Router({ isopen, setIsopen }) {
           element={
             <Layout>
               <SingleContact />
+            </Layout>
+          }
+        />
+        <Route
+          path="/dashboard/mail"
+          element={
+            <Layout>
+              <Mail />
             </Layout>
           }
         />

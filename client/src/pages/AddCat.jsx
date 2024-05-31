@@ -1,9 +1,9 @@
 import AddCategory from "../components/AddCategory";
 
-function AddCat() {
+function AddCat({ setIsopen, isopen }) {
   return (
     <>
-      <AddCategory />
+      <AddCategory setIsopen={setIsopen} isopen={isopen} />
     </>
   );
 }
