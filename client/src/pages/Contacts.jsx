@@ -18,9 +18,12 @@ function Contacts() {
         </div>
 
         <div>
-          <button className="border border-none bg-[#4870FC] rounded py-4 px-8">
-            Add a Contact
-          </button>
+          <Link to="/dashboard/addcontact">
+            {" "}
+            <button className="border border-none bg-[#4870FC] rounded py-4 px-8">
+              Add a Contact
+            </button>
+          </Link>
         </div>
       </div>
       <div className="flex flex-col cursor-pointer">

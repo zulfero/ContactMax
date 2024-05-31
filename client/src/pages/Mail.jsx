@@ -4,26 +4,26 @@ function Mail() {
   return (
     <>
       <Dashboard>
-        <div
-          className="flex
-        flex-col gap-9"
-        >
-          <h1>Mail</h1>
-          <div>
+        <div>
+          <h1 className="mb-[5em] font-bold text-2xl outline-none text-white ml-[3em]">Write Mail</h1>
+          <div
+            className="flex
+        flex-col gap-9 ml-[3em]"
+          >
             <div>
               {" "}
-              <input type="text" placeholder="From" />
+              <input  className="py-4 border border-none rounded-sm  outline-none"  type="text" placeholder="From:" />
             </div>
             <div>
               {" "}
-              <input type="text" placeholder="To" />
+              <input  className="py-4 border border-none rounded-sm outline-none" type="text" placeholder="To:" />
             </div>
             <div>
               {" "}
-              <input type="text" placeholder="Cc" />
+              <input className="py-4 border border-none rounded-sm outline-none"  type="text" placeholder="Cc:" />
             </div>
 
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <textarea className="border border-none rounded-sm resize-none outline-none" name="" id="" cols="30" rows="10"></textarea>
             {/* <div>
               {" "}
               <button>Send</button>

@@ -1,4 +1,7 @@
 import logo from "../assets/images/project.png"
+import foot1 from "../assets/images/facebook.png"
+import foot2 from "../assets/images/twitter.png"
+import foot3 from "../assets/images/instagram.png"
 
 function Footer() {
   return (
@@ -16,9 +19,9 @@ function Footer() {
           <div className="text-center mt-9">
             <p className="font-bold text-xl text-white">Follow Us At</p>
             <div className="flex gap-6 mt-5">
-              <img src="src/assets/images/facebook.png" alt="" width={50} />
-              <img src="src/assets/images/twitter.png" alt="" width={50} />
-              <img src="src/assets/images/instagram.png" alt="" width={50} />
+              <img src={foot1} alt="" width={50} />
+              <img src={foot2} alt="" width={50} />
+              <img src={foot3} alt="" width={50} />
             </div>
           </div>
         </div>
