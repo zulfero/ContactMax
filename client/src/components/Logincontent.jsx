@@ -18,7 +18,7 @@ function Logincontent({ setIsopen, isopen }) {
           </span>
         </div>
         <div className="border mt-[5em] rounded-3xl bg-gray-200 w-[40%] mx-auto py-5  ">
-          <h1 className="text-center font-bold text-2xl pb-5">Sign-Up</h1>
+          <h1 className="text-center font-bold text-2xl pb-5">Log-in</h1>
           <form className="  flex flex-col gap-4 px-[3em]">
             <input className="px-2 py-5" type="text" placeholder="Email" />
             <input className="px-2 py-5" type="text" placeholder="Password" />

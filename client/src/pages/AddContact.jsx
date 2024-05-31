@@ -1,19 +1,20 @@
 import Dashboard from "./Dashboard";
+import { Link } from "react-router-dom";
 
 function AddContact() {
   return (
     <>
       <Dashboard>
-        <div className="ml-[3em]">
+        <div className="ml-[3em] ">
           <div>
             <h1 className="font-bold text-center mt-4 text-4xl text-white">
               Add A Contact
             </h1>
           </div>
-          <div className="flex flex-col ">
-            <div className="flex   gap-[10em] my-[4em]">
+          <div className="flex flex-col gap-[3em] mt-[3em]">
+            <div className="flex items-center gap-6">
               <div>
-                <h1>FirstName</h1>
+                <h1 className="text-white">FirstName</h1>
               </div>
 
               <input
@@ -22,9 +23,9 @@ function AddContact() {
                 placeholder="Firstname"
               />
             </div>
-            <div className="flex  gap-[10em] my-[4em]">
+            <div className="flex items-center gap-6">
               <div>
-                <h1>LastName</h1>
+                <h1 className="text-white">LastName</h1>
               </div>
 
               <input
@@ -33,10 +34,10 @@ function AddContact() {
                 placeholder="Lastname"
               />
             </div>
-            <div className="flex  gap-[10em] my-[4em]">
+            <div className="flex items-center gap-6">
               <div>
                 {" "}
-                <h1>EmailAdd</h1>
+                <h1 className="text-white">EmailAdd</h1>
               </div>
 
               <input
@@ -45,9 +46,9 @@ function AddContact() {
                 placeholder="Email"
               />
             </div>
-            <div className="flex  gap-[10em] my-[4em]">
+            <div className="flex items-center gap-6">
               <div>
-                <h1>PhoneNo.</h1>
+                <h1 className="text-white">PhoneNo.</h1>
               </div>
 
               <input
@@ -56,10 +57,10 @@ function AddContact() {
                 placeholder=""
               />
             </div>
-            <div className="flex gap-[10em]">
+            <div className="flex items-center gap-6">
               <div>
                 {" "}
-                <h1>DOfBirth.</h1>
+                <h1 className="text-white">DOfBirth.</h1>
               </div>
 
               <input
@@ -70,7 +71,11 @@ function AddContact() {
             </div>
           </div>
           <div className="flex items-center justify-center">
-            <button className="border outline-none text-xl py-4 px-4 rounded-md">Add The Contact</button>
+            <Link to="/dashboard/contacts">
+              <button className="border border-none outline-none text-xl py-4 px-4 text-white bg-[#6180f0] rounded-md">
+                Add The Contact
+              </button>
+            </Link>
           </div>
         </div>
       </Dashboard>

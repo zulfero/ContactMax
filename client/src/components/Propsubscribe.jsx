@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 function Propsubscribe({
   heading1,
   heading2,
