@@ -1,4 +1,5 @@
 import Dashboard from "./Dashboard";
+import plane from "../assets/images/paper-plane.png"
 
 function Mail() {
   return (
@@ -45,13 +46,15 @@ function Mail() {
               rows="10"
             ></textarea>
           </div>
-          <div className="text-end mr-[5em]">
+      
+        </div>
+            <div className="text-end mr-[5em]">
             {" "}
             <button className="border  py-4 px-[4em] outline-none text-white text-xl">
               Send
             </button>
+            <img src={plane} alt="" width={30} />
           </div>
-        </div>
       </Dashboard>
     </>
   );

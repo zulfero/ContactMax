@@ -65,7 +65,7 @@ function SingleContact() {
             </div>{" "}
             <div className="flex gap-[6em]">
               <img src={point} alt="" width={30} />
-              <h1 className="text-xl text-white">Address:</h1>
+              <h1 className="text-xl text-white">Location:</h1>
               <div className="flex">
                 <h2>Magnolia horegion 1234</h2>
               </div>
@@ -79,12 +79,27 @@ function SingleContact() {
             </div>
           </div>
         </div>
-        <div className="flex justify-center items-center">
-          <button>Edit Contact</button>
+        <div className="flex justify-center items-center gap-[5em]">
+          <div className="flex justify-center items-center gap-[1em]">
+            <img src={edit} alt="" width={30} />
+            <button>Edit Contact</button>
+          </div>
 
-          <button>Send Email</button>
+          <div className="flex justify-center items-center gap-[1em]">
+            <div>
+              <Link to="/dashboard/mail">
+                {" "}
+                <img src={log} alt="" width={30} />{" "}
+              </Link>
+            </div>
 
-          <button>Delete Contact</button>
+            <button>Send Email</button>
+          </div>
+
+          <div className="flex items-center justify-center gap-[1.5em]">
+            <img src={remove} alt="" width={30} />
+            <button>Delete Contact</button>
+          </div>
         </div>
       </Dashboard>
     </>

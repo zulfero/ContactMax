@@ -1,5 +1,7 @@
 import Dashboard from "./Dashboard";
 import { Link } from "react-router-dom";
+import icon from "../assets/images/magnifier.png";
+import contact from "../assets/images/contact.png";
 
 function Contacts() {
   return (
@@ -8,21 +10,22 @@ function Contacts() {
         <div>
           {" "}
           <h1 className="font-bold text-2xl mb-[2em] rounded-lg">Contacts</h1>
-          <div className="">
+          <div className="flex border rounded-md p-4 px-[6em] bg-[#bfc9ee] border-none gap-6">
+            <img src={icon} alt="" width={30} />
             <input
-              className="border rounded-md p-4 px-[8em] bg-[#bfc9ee] border-none"
+              className="bg-[#bfc9ee] outline-none "
               type="text"
               placeholder="search for contacts,email..."
             />
           </div>
         </div>
-
-        <div>
+        <div className="flex">
           <Link to="/dashboard/addcontact">
             {" "}
-            <button className="border border-none bg-[#4870FC] rounded py-4 px-8">
-              Add a Contact
-            </button>
+            <div className="flex gap-4 border border-none bg-[#4870FC] rounded py-4 px-8 mr-7">
+              <img src={contact} alt="" width={30} />
+              <button className="">Add a Contact</button>
+            </div>
           </Link>
         </div>
       </div>
