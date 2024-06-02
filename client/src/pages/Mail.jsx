@@ -11,7 +11,7 @@ function Mail() {
           </h1>
           <div
             className="flex
-        flex-col gap-9 ml-[3em]"
+        flex-col gap-9 ml-[3em] bg-green-500"
           >
             <div>
               {" "}
@@ -48,9 +48,9 @@ function Mail() {
           </div>
       
         </div>
-            <div className="text-end mr-[5em]">
+            <div className=" flex items-center w-[10%] bg-red-500 border  py-4  outline-none text-white text-xl">
             {" "}
-            <button className="border  py-4 px-[4em] outline-none text-white text-xl">
+            <button className="">
               Send
             </button>
             <img src={plane} alt="" width={30} />

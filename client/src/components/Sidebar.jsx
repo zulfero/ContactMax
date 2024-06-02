@@ -20,10 +20,10 @@ function Sidebar() {
             <img src={cat} alt="" width={30} /> <h2>Categories</h2>
           </div>{" "}
         </Link>
-        <div className="flex  items-center gap-6">
+        <Link to="/dashboard/profile"> <div className="flex  items-center gap-6">
           <img src={profile} alt="" width={30} />
           <h2>Profile</h2>
-        </div>
+        </div> </Link>
       </div>
     </div>
   );

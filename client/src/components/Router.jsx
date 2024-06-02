@@ -9,6 +9,7 @@ import AddCategory from "./AddCategory";
 import SingleContact from "../pages/SingleContact";
 import Mail from "../pages/Mail";
 import AddContact from "../pages/AddContact";
+import Profile from "../pages/Profile";
 
 function Router({ isopen, setIsopen }) {
   return (
@@ -91,6 +92,14 @@ function Router({ isopen, setIsopen }) {
           element={
             <Layout>
               <AddCategory />
+            </Layout>
+          }
+        />
+        <Route
+          path="/dashboard/profile"
+          element={
+            <Layout>
+              <Profile />
             </Layout>
           }
         />
