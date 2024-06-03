@@ -11,6 +11,7 @@ import Mail from "../pages/Mail";
 import AddContact from "../pages/AddContact";
 import Profile from "../pages/Profile";
 
+
 function Router({ isopen, setIsopen }) {
   return (
     <BrowserRouter>
@@ -103,6 +104,7 @@ function Router({ isopen, setIsopen }) {
             </Layout>
           }
         />
+
       </Routes>
     </BrowserRouter>
   );

@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import Logincontent from "./Logincontent";
 import Signupcontent from "./Signupcontent";
-import logo from "../assets/images/project.png"
+import logo from "../assets/images/project.png";
 
 function Nav() {
   const [isopen, setIsopen] = useState({
     signup: false,
     login: false,
+    logout: false,
   });
   return (
     <div className="container mx-auto">
