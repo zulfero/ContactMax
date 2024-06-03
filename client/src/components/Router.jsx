@@ -10,7 +10,7 @@ import SingleContact from "../pages/SingleContact";
 import Mail from "../pages/Mail";
 import AddContact from "../pages/AddContact";
 import Profile from "../pages/Profile";
-
+import LogOut from "../pages/LogOut";
 
 function Router({ isopen, setIsopen }) {
   return (
@@ -104,7 +104,14 @@ function Router({ isopen, setIsopen }) {
             </Layout>
           }
         />
-
+        <Route
+          path="logout"
+          element={
+            <Layout>
+              <LogOut />
+            </Layout>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

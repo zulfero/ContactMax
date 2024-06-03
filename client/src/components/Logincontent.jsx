@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Logincontent({ setIsopen, isopen }) {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   function handlelogincontent(e) {
     setIsopen((prev) => ({ ...prev, login: false }));
   }
@@ -24,20 +24,25 @@ function Logincontent({ setIsopen, isopen }) {
             <input className="px-2 py-5" type="text" placeholder="Password" />
 
             <div className="text-center flex flex-col gap-8 mb-[7em] mt-[3em] items-center">
-              <button className="font-semibold border rounded-md w-[30%] py-4 text-xl bg-[#4870FC] cursor-pointer text-white" onClick={()=>navigate("/dashboard/contacts")}>
+              <button
+                className="font-semibold border rounded-md w-[30%] py-4 text-xl bg-[#4870FC] cursor-pointer text-white"
+                onClick={() => navigate("/dashboard/contacts")}
+              >
                 Log-In
               </button>
             </div>
           </form>
           <p className="text-center">
             Don't Have An Account?
-            <span className=" text-[1em] text-[#4870FC] underline">
+            <span
+              onClick={() => setIsopen((prev) => ({ ...prev, signup: true }))}
+              className=" text-[1em] text-[#4870FC] underline"
+            >
               Sign-Up
             </span>
           </p>
         </div>
-      </div>
-      //{" "}
+      </div>{" "}
     </div>
   );
 }
