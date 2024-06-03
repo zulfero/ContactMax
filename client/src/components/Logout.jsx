@@ -1,9 +1,9 @@
 function Logout(){
     return(
         <>
-        <p>
-            The Logout Page
-        </p>
+      <div>
+        
+      </div>
         </>
     )
 }
