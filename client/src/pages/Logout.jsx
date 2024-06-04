@@ -6,23 +6,16 @@ function Logout() {
   return (
     <Dashboard>
       <div className="container mx-auto">
-        <div>
-          <span className=" border border-none absolute flex items-center justify-center right-[19.4em] top-[8em] cursor-pointer size-8 rounded-full text-2xl p-2 bg-[#4870FC] text-white">
-            x
-          </span>
-        </div>
         <div className="border mt-[5em] rounded-3xl bg-gray-200 w-[40%] mx-auto py-5  ">
           <h1 className="text-center font-bold text-2xl pb-5">Log-Out</h1>
           <form className="  flex flex-col gap-4 px-[2.5em]">
-            <div className="border  text-center w-[30%] ml-[12em] bg-[#4870FC]">
+            <div className="border rounded-xl text-center w-[30%] ml-[12em] bg-[#4870FC]">
               <Link to="/dashboard/contacts">
                 {" "}
-                <button className="py-4 px-2 text-xl text-white ">
-                  Exit
-                </button>
+                <button className="py-4 px-2 text-xl text-white  ">Exit</button>
               </Link>
             </div>
-            <div className="border text-center w-[30%] ml-[12em] bg-[#4870FC]">
+            <div className="border text-center rounded-xl w-[30%] ml-[12em] bg-[#4870FC]">
               <Link to="/">
                 {" "}
                 <button className="py-4 px-2 text-xl text-white ">
