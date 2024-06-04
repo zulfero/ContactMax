@@ -2,17 +2,20 @@ from django.db import models
 from django.contrib.auth.models import BaseUserManager
 from django.contrib.auth.models import AbstractBaseUser
 
-class Contact(models.Model):
-      def __str__(self):
-         return self.firstname + " " + self.lastname
 
-      firstname=models.CharField(max_length=50)
-      lastname=models.CharField(max_length=50)
-      email=models.EmailField(max_length=200,null=True,blank=True,unique=True)
-      phonenumber=models.IntegerField()
-      address=models.TextField(null=True,blank=True)
-      birthday=models.DateField(null=True,blank=True)
-      owner=models.ForeignKey(User,on_delete=models.CASCADE)
+
+
+
+class Category(models.Model):
+      name=models.CharField(max_length=200)
+    
+
+      def __str__(self):
+        return self.name
+
+
+    
+
 
 
 
@@ -28,6 +31,7 @@ class CustomUserManager(BaseUserManager):
             return user  
 
 
+      
       def create_superuser(self,email,password=None,**extra_fields):
             extra_fields.setdefault("is_staff",True)
             extra_fields.setdefault("is_superuser",True)
@@ -40,28 +44,41 @@ class CustomUserManager(BaseUserManager):
 
 
 
-
+            
 class CustomUser(AbstractBaseUser):    
       firstname=models.CharField(max_length=50)
       lastname=models.CharField(max_length=50)   
       email=models.EmailField(max_length=50 ,unique=True)    
-      is_active=models.BooleanField(True)
-      user=models.OneToOneField(User)
+      is_active=models.BooleanField(default=True)
 
       objects=CustomUserManager
       USERNAME_FIELD="email"  
       REQUIRED_FIELDS=["firstname","lastname"] 
       def __str__(self):
        return self.firstname
+        
 
 
-class Category(models.Model):
-      name=models.CharField(max_length=200)
-      category=models.ManyToManyField(Category)
-    
 
+class Contact(models.Model):
       def __str__(self):
-        return self.name
+         return self.firstname + " " + self.lastname
+
+      firstname=models.CharField(max_length=50)
+      lastname=models.CharField(max_length=50)
+      email=models.EmailField(max_length=200,null=True,blank=True,unique=True)
+      phonenumber=models.IntegerField()
+      address=models.TextField(null=True,blank=True)
+      birthday=models.DateField(null=True,blank=True)
+      owner=models.ForeignKey(CustomUser,on_delete=models.CASCADE,default=None)
+      category=models.ManyToManyField(Category)
+
+
+
+
+
+
+
 
 class SubscriptionPlan(models.Model):
       name=models.CharField(max_length=200)
@@ -71,12 +88,26 @@ class SubscriptionPlan(models.Model):
         return self.name
 
 
+
+
 class UserProfile(models.Model):
-      user=models.CharField(max_length=200)
-      subscriptionplan=models.ForeignKey(SubscriptionPlan,on_delete=model.SET_NULL)
-      
+      user=models.OneToOneField(CustomUser,on_delete=models.CASCADE)
+      subscriptionplan=models.ForeignKey(SubscriptionPlan,on_delete=models.SET_NULL, null=True)
+
       def __str__(self):
-        return self.user
+            return f"{self.user.firstname}'s profile"
+              
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -14,7 +14,7 @@ function AddContact() {
           <div className="flex flex-col gap-[3em] mt-[3em]">
             <div className="flex items-center gap-6">
               <div>
-                <h1 className="text-white">FirstName</h1>
+                <h1 className="text-white  text-xl ">FirstName</h1>
               </div>
 
               <input
@@ -25,7 +25,7 @@ function AddContact() {
             </div>
             <div className="flex items-center gap-6">
               <div>
-                <h1 className="text-white">LastName</h1>
+                <h1 className="text-white text-xl ">LastName</h1>
               </div>
 
               <input
@@ -37,7 +37,7 @@ function AddContact() {
             <div className="flex items-center gap-6">
               <div>
                 {" "}
-                <h1 className="text-white">EmailAdd</h1>
+                <h1 className="text-white text-xl ">EmailAdd</h1>
               </div>
 
               <input
@@ -48,7 +48,7 @@ function AddContact() {
             </div>
             <div className="flex items-center gap-6">
               <div>
-                <h1 className="text-white">PhoneNo.</h1>
+                <h1 className="text-white text-xl ">PhoneNo.</h1>
               </div>
 
               <input
@@ -60,7 +60,7 @@ function AddContact() {
             <div className="flex items-center gap-6">
               <div>
                 {" "}
-                <h1 className="text-white">DOfBirth.</h1>
+                <h1 className="text-white text-xl ">DOfBirth.</h1>
               </div>
 
               <input

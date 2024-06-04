@@ -27,7 +27,7 @@ function Sidebar() {
             <h2>Profile</h2>
           </div>{" "}
         </Link>
-        <Link to="/logout">
+        <Link to="/dashboard/logout">
           {" "}
           <div className="flex  items-center gap-6">
             <h2>Log-Out</h2>
