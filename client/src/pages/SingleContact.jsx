@@ -9,8 +9,12 @@ import birth from "../assets/images/calendar.png";
 import point from "../assets/images/location.png";
 import remove from "../assets/images/delete.png";
 import edit from "../assets/images/editing.png";
+import Edit from "./Edit";
+import { useState } from "react";
+
 
 function SingleContact() {
+  const [isopen, setIsopen] = useState({ editcontact: false });
   return (
     <>
       <Dashboard>
@@ -24,8 +28,8 @@ function SingleContact() {
 
           <h2 className="font-bold text-2xl">Natasha Romanof</h2>
         </div>
-        <div className="pl-[5em] flex justify-between items-center my-[6em]  text-white  text-center mt-[5em] pr-[5em]">
-          <div className="flex flex-col gap-[6em]">
+        <div className="pl-[5em] flex gap-[2 0em] items-center my-[6em]  text-white  text-center mt-[5em] pr-[5em]">
+          <div className="flex flex-col gap-[4em]">
             <div className="flex gap-[6em]">
               <img src={person} alt="" width={30} />
               <h1 className="text-xl text-white">Names:</h1>
@@ -54,8 +58,12 @@ function SingleContact() {
               </div>
             </div>{" "}
           </div>
+           
+          {isopen.editcontact ? (
+          <Edit setIsopen={setIsopen} isopen={isopen} />
+        ) : null}
 
-          <div className="flex flex-col gap-[6em]">
+          <div className="flex flex-col gap-[4em]">
             <div className="flex gap-[6em]">
               <img src={email} alt="" width={30} />
               <h1 className="text-xl text-white">Address:</h1>
@@ -79,10 +87,20 @@ function SingleContact() {
             </div>
           </div>
         </div>
+        {isopen.editcontact ? (
+          <Edit setIsopen={setIsopen} isopen={isopen} />
+        ) : null}
         <div className="flex justify-center items-center gap-[5em]">
           <div className="flex justify-center items-center gap-[1em]">
             <img src={edit} alt="" width={30} />
-            <button>Edit Contact</button>
+            <button
+              className=""
+              onClick={() =>
+                setIsopen((prev) => ({ ...prev, editcontact: true }))
+              }
+            >
+              Edit Contact
+            </button>
           </div>
 
           <div className="flex justify-center items-center gap-[1em]">
