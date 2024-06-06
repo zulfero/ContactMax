@@ -1,19 +1,52 @@
 import { useState } from "react";
 
 function Signupcontent({ setIsopen, isopen }) {
-  const [Signup, setSignup] = useState({
-    firstName: "",
-    lastName: "",
+  const [formdata, setFormdata] = useState({
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
-    confirmpassword: "",
   });
-  //   function handleSignupContent(e) {
-  //     setSignup(False);
-  //   }
+  const [errorMessege, setErrorMessage] = useState("");
+
   function handlesignupcontent(e) {
     setIsopen((prev) => ({ ...prev, signup: false }));
   }
+  const handleChange = (e) => {
+    setFormdata({ ...formdata, [e.target.name]: e.target.value });
+  };
+
+  const handleregister = (e) => {
+    e.preventDefault();
+
+    if (formdata.firstname === "") {
+      setErrorMessage("Kindly fill all the Fileds");
+    } else if (formdata.lastname === "") {
+      setErrorMessage("Kindly fill all the Fileds");
+    } else if (formdata.email === "") {
+      setErrorMessage("Kindly fill all the Fileds");
+    } else if (formdata.password === "") {
+      setErrorMessage("Kindly fill all the Fileds");
+    } else {
+      setErrorMessage("");
+      console.log(formdata);
+      const url="http://127.0.0.1:8000/api/userregistration/"
+      const options={
+        method:"POST",
+        headers:{
+         "Content-Type":"application/json"
+        },
+        body:JSON.stringify(formdata),
+      }
+      fetch(url,options).then(res=>{
+        console.log(res)
+        return res.json()
+      })
+      .then(data=>console.log(data)).catch(err=>console.log(err))
+      
+    }
+  };
+
   return (
     // <div className="container mx-auto">
     // <div className="border block mx-auto p-16 px-2 w-[70%] bg-[#4870FC] ">
@@ -29,17 +62,49 @@ function Signupcontent({ setIsopen, isopen }) {
       <div className="border mt-[5em] rounded-3xl bg-gray-200 w-[40%] mx-auto py-5  ">
         <h1 className="text-center font-bold text-2xl pb-5">Sign-Up</h1>
         <form className="  flex flex-col gap-4 px-[3em]">
-          <input className=" px-2 py-5" type="text" placeholder="FirstName" />
-          <input className="px-2 py-5" type="text" placeholder="LastName" />
-          <input className="px-2 py-5" type="text" placeholder="Email" />
-          <input className="px-2 py-5" type="text" placeholder="Password" />
+          <input
+            className=" px-2 py-5"
+            name="firstname"
+            onChange={handleChange}
+            type="text"
+            placeholder="FirstName"
+          />
           <input
             className="px-2 py-5"
+            name="lastname"
+            onChange={handleChange}
+            type="text"
+            placeholder="LastName"
+          />
+          <input
+            className="px-2 py-5"
+            name="email"
+            onChange={handleChange}
+            type="text"
+            placeholder="Email"
+          />
+          <input
+            className="px-2 py-5"
+            name="password"
+            onChange={handleChange}
+            type="text"
+            placeholder="Password"
+          />
+          <input
+            className="px-2 py-5"
+            name="confirmpassword"
             type="text"
             placeholder="Confirm Password"
+            onChange={handleChange}
           />
+          <p className="text-red-500 text-center text-2xl font-bold">
+            {errorMessege}
+          </p>
           <div className="text-center flex flex-col gap-8 mb-[7em] mt-[3em] items-center">
-            <button className="font-semibold border rounded-md w-[30%] py-4 text-xl bg-[#4870FC] cursor-pointer text-white">
+            <button
+              className="font-semibold border rounded-md w-[30%] py-4 text-xl bg-[#4870FC] cursor-pointer text-white"
+              onClick={handleregister}
+            >
               Submit
             </button>
           </div>

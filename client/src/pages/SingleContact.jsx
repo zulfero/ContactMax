@@ -28,7 +28,7 @@ function SingleContact() {
 
           <h2 className="font-bold text-2xl">Natasha Romanof</h2>
         </div>
-        <div className="pl-[5em] flex gap-[2 0em] items-center my-[6em]  text-white  text-center mt-[5em] pr-[5em]">
+        <div className="pl-[5em] flex gap-[20em] items-center my-[6em]  text-white  text-center mt-[5em] pr-[5em]">
           <div className="flex flex-col gap-[4em]">
             <div className="flex gap-[6em]">
               <img src={person} alt="" width={30} />
@@ -91,7 +91,7 @@ function SingleContact() {
           <Edit setIsopen={setIsopen} isopen={isopen} />
         ) : null}
         <div className="flex justify-center items-center gap-[5em]">
-          <div className="flex justify-center items-center gap-[1em]">
+          <div className="flex justify-center items-center gap-[1em] border text-white bg-[#4870FC] border-none rounded-md  p-3">
             <img src={edit} alt="" width={30} />
             <button
               className=""
@@ -103,7 +103,7 @@ function SingleContact() {
             </button>
           </div>
 
-          <div className="flex justify-center items-center gap-[1em]">
+          <div className="flex justify-center items-center gap-[1em] border text-white bg-[#4870FC] p-3 border-none rounded-md">
             <div>
               <Link to="/dashboard/mail">
                 {" "}
@@ -114,7 +114,7 @@ function SingleContact() {
             <button>Send Email</button>
           </div>
 
-          <div className="flex items-center justify-center gap-[1.5em]">
+          <div className="flex items-center justify-center gap-[1em] border text-white p-3 bg-[#4870FC] border-none rounded-md">
             <img src={remove} alt="" width={30} />
             <button>Delete Contact</button>
           </div>

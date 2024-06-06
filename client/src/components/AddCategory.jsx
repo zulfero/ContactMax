@@ -1,6 +1,30 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function AddCategory({setIsopen,isopen}) {
+  const [formdata,setFormdata]=useState({
+    category:"",
+  })
+  const handleChange = (e) => {
+    setFormdata({ ...formdata, [e.target.name]: e.target.value });
+  };
+
+  const [errorMessege,setErrorMessage]=useState("");
+
+  const handleaddcategory = (e) => {
+    e.preventDefault();
+
+    if (formdata.category === "") {
+      setErrorMessage("Kindly fill in the category name");
+    }
+    else {
+      setErrorMessage("");
+      console.log(formdata);
+
+
+    }
+  };
+  
   const navigate = useNavigate({ isopen: false, setIsopen: false });
   function handleAddcategory(e) {
     setIsopen(false);
@@ -26,14 +50,17 @@ function AddCategory({setIsopen,isopen}) {
             <form className="  flex flex-col gap-4 px-[3em]">
               <input
                 className="px-2 py-5 outline-none"
+                name="category"
                 type="text"
                 placeholder="Category Name..."
+                onChange={handleChange}
               />
+              <p className="text-red-500 text-center text-2xl font-bold">{errorMessege}</p>
 
               <div className="text-center flex flex-col gap-8 mb-[7em] mt-[3em] items-center">
                 <button
                   className="font-semibold border rounded-md w-[30%] py-4 text-xl bg-[#4870FC] cursor-pointer text-white"
-                  onClick={() => navigate("/dashboard/categories")}
+                  onClick={handleaddcategory}
                 >
                   Add
                 </button>

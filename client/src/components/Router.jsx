@@ -24,14 +24,7 @@ function Router({ isopen, setIsopen }) {
             </Layout>
           }
         />
-        {/* <Route
-          path="/dashboard"
-          element={
-            <Layout>
-              <Dashboard />
-            </Layout>
-          } */}
-        {/* /> */}
+
         <Route
           path="/dashboard/contacts"
           element={
