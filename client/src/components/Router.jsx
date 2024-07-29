@@ -11,6 +11,7 @@ import Mail from "../pages/Mail";
 import AddContact from "../pages/AddContact";
 import Profile from "../pages/Profile";
 import Logout from "../pages/Logout";
+import Login from "../pages/Login";
 
 function Router({ isopen, setIsopen }) {
   return (
@@ -38,6 +39,14 @@ function Router({ isopen, setIsopen }) {
           element={
             <Layout>
               <Signupcontent />
+            </Layout>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <Layout>
+              <Login />
             </Layout>
           }
         />

@@ -2,10 +2,12 @@ from rest_framework import serializers
 from .models import Contact,UserProfile,SubscriptionPlan,Category,CustomUser
 
 class ContactSerializer(serializers.ModelSerializer):
+   category=serializers.PrimaryKeyRelatedField(queryset=Category.objects.all(), many=True)
 
- class Meta:
-    model=Contact
-    fields=("id","firstname","lastname","email","phonenumber","address","birthday")    
+
+   class Meta:
+      model=Contact
+      fields=("id","firstname","lastname","email","phonenumber","address","birthday","category","owner")    
 
 
 

@@ -2,33 +2,70 @@ import Dashboard from "./Dashboard";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-function AddContact() {
+function AddContact({Categories}) {
   const [formdata, setFormdata] = useState({});
-  const [errorMessege, setErrorMessage] = useState("");
+  const [errorMessege, setErrorMessage] = useState({});
   const handleChange = (e) => {
     setFormdata({ ...formdata, [e.target.name]: e.target.value });
   };
+  let token = localStorage.getItem("access_token");
+
   const handleaddcontact = (e) => {
     e.preventDefault();
 
+    const errors = {};
+
     if (formdata.firstname === "") {
-      setErrorMessage("Kindly fill in all the Fileds");
-    } else if (formdata.lastname === "") {
-      setErrorMessage("Kindly fill in all the Fileds");
-    } else if (formdata.email === "") {
-      setErrorMessage("Kindly fill in all the Fileds");
-    } else if (formdata.phonenumber === "") {
-      setErrorMessage("Kindly fill in all the Fileds");
-    } else if (formdata.birthday === "") {
-      setErrorMessage("Kindly fill in all the Fileds");
-    } else if (formdata.category === "") {
-      setErrorMessage("Kindly fill in all the Fileds");
-    } else if (formdata.address === "") {
-      setErrorMessage("Kindly fill in all the Fileds");
+      errors.firstname = "Kindly fill in the First Name";
+    }
+    if (formdata.lastname === "") {
+      errors.lastname = "Kindly fill in the last Name";
+    }
+    if (formdata.email === "") {
+      errors.email = "Kindly fill in the Email";
+    }
+    if (formdata.phonenumber === "") {
+      errors.phonenumber = "Kindly fill in Your Phone Number";
+    }
+    if (formdata.birthday === "") {
+      errors.birthday = "Kindly fill in your Date of Birth";
+    }
+    if (formdata.category === "") {
+      errors.category = "Kindly fill in the category";
+    }
+    if (formdata.address === "") {
+      errors.address = "Kindly Fill in The Address";
     } else {
       setErrorMessage("");
       console.log(formdata);
+      const url = "http://127.0.0.1:8000/api/contact/";
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+
+        },
+        body: JSON.stringify(formdata),
+      };
+      fetch(url, options)
+        .then((res) => {
+          console.log(res);
+          if (!res.ok) {
+            return res.json().then((message) => {
+              console.log(message);
+              // console.log(contact["contact"]);
+            });
+          }
+          return res.json();
+        })
+        .then((data) => {
+          if (data !== undefined) {
+            console.log(data);
+          }
+        });
     }
+    // setErrorMessage(errors);
   };
 
   return (
@@ -51,7 +88,7 @@ function AddContact() {
                 name="firstname"
                 type="text"
                 placeholder="Firstname"
-                onChange={e=>handleChange(e)}
+                onChange={(e) => handleChange(e)}
               />
             </div>
             <div className="flex items-center gap-6">
@@ -61,15 +98,14 @@ function AddContact() {
 
               <input
                 className="py-4 border rounded-sm px-8"
-                name="lasname"
+                name="lastname"
                 type="text"
                 placeholder="Lastname"
-                onChange={e=>handleChange(e)}
+                onChange={(e) => handleChange(e)}
               />
             </div>
             <div className="flex items-center gap-6">
               <div>
-                {" "}
                 <h1 className="text-white text-xl ">EmailAdd</h1>
               </div>
 
@@ -78,7 +114,7 @@ function AddContact() {
                 name="email"
                 type="text"
                 placeholder="Email"
-                onChange={e=>handleChange(e)}
+                onChange={(e) => handleChange(e)}
               />
             </div>
             <div className="flex items-center gap-6">
@@ -90,8 +126,8 @@ function AddContact() {
                 className="py-4 border rounded-sm px-8"
                 name="phonenumber"
                 type="Number"
-                placeholder=""
-                onChange={e=>handleChange(e)}
+                placeholder="Phone Number"
+                onChange={(e) => handleChange(e)}
               />
             </div>
             <div className="flex items-center gap-6">
@@ -104,39 +140,41 @@ function AddContact() {
                 name="category"
                 type="text"
                 placeholder="Category name"
-                onChange={e=>handleChange(e)}
+                onChange={(e) => handleChange(e)}
               />
             </div>
             <div className="flex items-center gap-6">
               <div>
-                <h1 className="text-white text-xl ">Address</h1>
+                <h1 className="text-white text-xl ">Address.</h1>
               </div>
 
               <input
-                className="py-4 border rounded-sm px-8"
-                name="phonenumber"
+                className="py-4 border  rounded-sm px-8"
+                name="address"
                 type="text"
                 placeholder="address"
-                onChange={e=>handleChange(e)}
+                onChange={(e) => handleChange(e)}
               />
             </div>
+            {/* <p className="text-red-500 text-center text-2xl font-bold">
+              {errorMessege}
+            </p> */}
             <div className="flex items-center gap-6">
               <div>
-                {" "}
-                <h1 className="text-white text-xl ">DOfBirth.</h1>
+                <h1 className="text-white text-xl ">DOfBirth</h1>
               </div>
 
               <input
-                className="py-4 border rounded-sm px-[5em] "
+                className="py-4 border rounded-sm px-[5em] outline-none "
                 name="birthday"
                 type="Date"
                 placeholder="Firstname"
-                onChange={e=>handleChange(e)}
+                onChange={(e) => handleChange(e)}
               />
             </div>
-            <p className="text-red-500 text-center text-2xl font-bold">
+            {/* <p className="text-red-500 text-center text-2xl font-bold">
               {errorMessege}
-            </p>
+            </p> */}
           </div>
           <div className="flex items-center justify-center">
             <button

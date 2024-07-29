@@ -1,10 +1,10 @@
 import Logincontent from "../components/Logincontent";
 
-function login() {
+function Login() {
   return (
     <>
       <Logincontent />
     </>
   );
 }
-export default login;
+export default Login;

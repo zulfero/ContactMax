@@ -1,30 +1,50 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-function AddCategory({setIsopen,isopen}) {
-  const [formdata,setFormdata]=useState({
-    category:"",
-  })
+function AddCategory({ setIsopen, isopen }) {
+  const [formdata, setFormdata] = useState({
+    category: "",
+  });
   const handleChange = (e) => {
     setFormdata({ ...formdata, [e.target.name]: e.target.value });
   };
 
-  const [errorMessege,setErrorMessage]=useState("");
+  const [errorMessege, setErrorMessage] = useState("");
 
   const handleaddcategory = (e) => {
     e.preventDefault();
 
     if (formdata.category === "") {
       setErrorMessage("Kindly fill in the category name");
-    }
-    else {
+    } else {
       setErrorMessage("");
       console.log(formdata);
-
-
+      const url = "http://127.0.0.1:8000/api/category/";
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formdata),
+      };
+      fetch(url, options)
+        .then((res) => {
+          console.log(res);
+          if (!res.ok) {
+            return res.json().then((category) => {
+              console.log(category["category"]);
+            });
+          }
+          return res.json();
+        })
+        .then((data) => {
+          if (data !== undefined) {
+            console.log(data);
+          }
+        });
     }
   };
-  
+
   const navigate = useNavigate({ isopen: false, setIsopen: false });
   function handleAddcategory(e) {
     setIsopen(false);
@@ -55,7 +75,9 @@ function AddCategory({setIsopen,isopen}) {
                 placeholder="Category Name..."
                 onChange={handleChange}
               />
-              <p className="text-red-500 text-center text-2xl font-bold">{errorMessege}</p>
+              <p className="text-red-500 text-center text-2xl font-bold">
+                {errorMessege}
+              </p>
 
               <div className="text-center flex flex-col gap-8 mb-[7em] mt-[3em] items-center">
                 <button

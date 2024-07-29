@@ -1,20 +1,31 @@
 import Dashboard from "./Dashboard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AddCat from "./AddCat";
-
 function Categories() {
   const [isopen, setIsopen] = useState({ addcategory: false });
+  const [categories,setCataegories]=useState([]);
+  useEffect(() => {
+    async function fetchCategories() {
+      const response = await fetch("http://127.0.0.1:8000/api/category/");
+      const data = await response.json().catch((err) => console.log(err));
+      console.log(data);
+      if(response.ok){
+        setCataegories(data)
+      }
+    }
+    fetchCategories();
+  }, []);
   return (
     <Dashboard>
       <div className="ml-7">
         <h2 className="font-bold text-2xl">Categories</h2>
         <div className=" mt-7">
           <ul className="flex flex-col gap-6 text-xl">
-            <li>Friends</li>
-            <li>Business</li>
-            <li>Family</li>
-            <li>NGO's Family</li>
-            <li>Donation Group</li>
+           {
+            categories&&categories.map(category=>{
+              return <li key={category.id}>{category.name}</li>
+            })
+           }
           </ul>
         </div>
         {isopen.addcategory ? (

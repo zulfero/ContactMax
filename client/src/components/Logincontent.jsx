@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useActionData, useNavigate } from "react-router-dom";
+
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Logincontent({ setIsopen, isopen }) {
   const [formdata, setFormdata] = useState({
@@ -28,8 +29,39 @@ function Logincontent({ setIsopen, isopen }) {
     } else {
       setErrorMessage("");
       console.log(formdata);
-
-
+      const url = "http://127.0.0.1:8000/api/login/";
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formdata),
+      };
+      fetch(url, options)
+        .then((res) => {
+          console.log(res);
+          if (!res.ok) {
+            return res.json().then(info=>{
+              console.log(info)
+              setErrorMessage(info.message || info.email)
+              // setErrorMessage(info[0])
+              // setIsopen((prev) => ({ ...prev, login: false}));
+            });
+          }
+          return res.json();
+        })
+        .then((data) => {
+         
+          if(data!==undefined){
+            console.log(data);
+            localStorage.setItem("access_token",data.access_token)
+            localStorage.setItem("refresh_token",data.refresh_token)
+            navigate("/dashboard/contacts");
+             setIsopen((prev) => ({ ...prev, login:false }));
+          }
+       
+        })
+        .catch((err) => console.log(err));
     }
   };
 
@@ -61,7 +93,9 @@ function Logincontent({ setIsopen, isopen }) {
               type="text"
               placeholder="Password"
             />
-            <p className="text-red-500 text-center text-2xl font-bold">{errorMessege}</p>
+            <p className="text-red-500 text-center text-2xl font-bold">
+              {errorMessege}
+            </p>
 
             <div className="text-center flex flex-col gap-8 mb-[7em] mt-[3em] items-center">
               <button

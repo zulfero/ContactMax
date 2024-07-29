@@ -11,11 +11,5 @@ urlpatterns=[
     path('userprofile/',views.UserProfileView.as_view(),name='userprofile'),
     path('userregistration/',views.UserRegistrationView.as_view(),name='userregistration'),
     path('login/',views.UserLoginView.as_view(),name='login'),
-
-
-    
-
-
-
-
+    path('contact/<id>',views.SingleContactView.as_view(),name='singlecontact'),
 ]

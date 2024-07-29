@@ -30,20 +30,33 @@ function Signupcontent({ setIsopen, isopen }) {
     } else {
       setErrorMessage("");
       console.log(formdata);
-      const url="http://127.0.0.1:8000/api/userregistration/"
-      const options={
-        method:"POST",
-        headers:{
-         "Content-Type":"application/json"
+      const url = "http://127.0.0.1:8000/api/userregistration/";
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        body:JSON.stringify(formdata),
-      }
-      fetch(url,options).then(res=>{
-        console.log(res)
-        return res.json()
-      })
-      .then(data=>console.log(data)).catch(err=>console.log(err))
-      
+        body: JSON.stringify(formdata),
+      };
+      fetch(url, options)
+        .then((res) => {
+          console.log(res);
+          if (!res.ok) {
+            return res.json().then((message) => {
+              setErrorMessage(message["email"][0]);
+            });
+          }
+
+          return res.json();
+        })
+        .then((data) => {
+          if (data !== undefined) {
+            console.log(data);
+            setIsopen((prev) => ({ ...prev, signup: false }));
+            setIsopen((prev) => ({ ...prev, login: true }));
+          }
+        })
+        .catch((err) => console.log(err));
     }
   };
 
@@ -80,26 +93,24 @@ function Signupcontent({ setIsopen, isopen }) {
             className="px-2 py-5"
             name="email"
             onChange={handleChange}
-            type="text"
+            type="email"
             placeholder="Email"
           />
           <input
             className="px-2 py-5"
             name="password"
             onChange={handleChange}
-            type="text"
+            type="password"
             placeholder="Password"
           />
           <input
             className="px-2 py-5"
             name="confirmpassword"
-            type="text"
+            type="password"
             placeholder="Confirm Password"
             onChange={handleChange}
           />
-          <p className="text-red-500 text-center text-2xl font-bold">
-            {errorMessege}
-          </p>
+          <p className="text-red-500 text-center text-xl">{errorMessege}</p>
           <div className="text-center flex flex-col gap-8 mb-[7em] mt-[3em] items-center">
             <button
               className="font-semibold border rounded-md w-[30%] py-4 text-xl bg-[#4870FC] cursor-pointer text-white"

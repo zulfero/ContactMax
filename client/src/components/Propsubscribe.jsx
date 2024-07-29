@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-
 function Propsubscribe({
   heading1,
   heading2,
@@ -40,9 +39,11 @@ function Propsubscribe({
         </div>
       </div>
       <div className="text-center mt-6">
-        <button className="border rounded-md bg-[#4870FC] text-white w-[100%] py-4">
-          Try For Free
-        </button>
+        <Link to="/dashboard">
+          <button className="border rounded-md bg-[#4870FC] text-white w-[100%] py-4">
+            Try For Free
+          </button>
+        </Link>
       </div>
     </div>
   );

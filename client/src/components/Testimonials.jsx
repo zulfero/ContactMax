@@ -21,18 +21,12 @@ function Testimonials() {
         <TestimonialProp
           image="src/assets/images/images (1).jpeg"
           name="Kalvin clain"
-          paragraph="“ I have found using the contact-
-        max useful due to its fast pace
-        and ease of adding the contact
-        that is important”"
+          paragraph="“ It has given me the ability to juggle between the contacts i keep and to organize them well without loosing said contacts.”"
         />
         <TestimonialProp
           image={img2}
           name="Jhon Cena"
-          paragraph="“ I have found using the contact-
-        max useful due to its fast pace
-        and ease of adding the contact
-        that is important”"
+          paragraph="“ Using Contact max has given me the ability to handle every contact due to the category section being utilized to the fullest”"
         />
       </div>
     </div>
